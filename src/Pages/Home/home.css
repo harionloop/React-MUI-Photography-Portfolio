@@ -1,0 +1,20 @@
+.home-container-back {
+    background: url("https://source.unsplash.com/random/400x400");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin-top: 20px;
+    border-radius: 22px;
+}
+
+.home-container-front {
+    transition: 0.7s ease;
+    min-height: calc(100vh - 60px);
+    border-radius: 22px;
+    position: relative;
+    top: 30px;
+}
+
+.home-container-front:hover {
+    background-color: rgba(252, 255, 253, 0.5);
+}
