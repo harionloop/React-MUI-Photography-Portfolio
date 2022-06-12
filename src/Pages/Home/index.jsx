@@ -1,34 +1,53 @@
 import { Box, Button, Paper, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import { useNavigate } from "react-router-dom";
-import "./home.css";
 
 const Home = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Typography
-        variant="h2"
-        component={"h1"}
-        align="center"
-        sx={{ fontWeight: 500, letterSpacing: "0.1em", mt: 2 }}
-      >
-        Arun Sharma
-      </Typography>
-      <Typography
-        variant="h4"
-        align="center"
+      <Container
+        maxWidth="xl"
         sx={{
-          fontWeight: 200,
-          fontFamily: "Nunito Sans",
-          fontSize: "1.1rem",
-          letterSpacing: "0.2em",
+          backgroundImage: `url(${require("../../assets/images/home-bg.jpg")})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          height: "100vh",
+          zIndex: -1,
         }}
       >
-        - the photographer -
-      </Typography>
-      <Container className="home-container-back">
-        <div className="home-container-front">
+        <Container maxWidth="sm">
+          <Typography
+            variant="h2"
+            component={"h1"}
+            align="center"
+            sx={{ fontWeight: 500, letterSpacing: "0.1em" }}
+          >
+            Arun Sharma
+          </Typography>
+          <Typography
+            variant="h4"
+            align="center"
+            sx={{
+              fontWeight: 200,
+              fontFamily: "Nunito Sans",
+              fontSize: "1.1rem",
+              letterSpacing: "0.2em",
+            }}
+          >
+            - the photographer -
+          </Typography>
+        </Container>
+        <Container
+          maxWidth={400}
+          sx={{
+            backgroundColor: "rgba(255,255,255,0.3)",
+            height: "75vh",
+            boxShadow: "0px 0px 10px rgba(0,0,0,0.5)",
+            mt: 2,
+          }}
+          s
+        >
           <Typography
             variant="h4"
             align="center"
@@ -42,7 +61,8 @@ const Home = () => {
 
           <Box sx={{ display: "flex", justifyContent: "center", mt: 2, p: 2 }}>
             <Button
-              sx={{ mr: 2, width: "120px", height: "60px" }}
+              size="large"
+              sx={{ mr: 2 }}
               variant="contained"
               onClick={() => {
                 navigate("/portfolio");
@@ -51,8 +71,9 @@ const Home = () => {
               Portfolio
             </Button>
             <Button
+              size="large"
               variant="contained"
-              sx={{ mr: 2, width: "120px", height: "60px" }}
+              sx={{ mr: 2 }}
               onClick={() => {
                 navigate("/learn-me");
               }}
@@ -60,8 +81,8 @@ const Home = () => {
               Learn Me
             </Button>
             <Button
+              size="large"
               variant="contained"
-              sx={{ width: "120px", height: "60px" }}
               onClick={() => {
                 navigate("/contact");
               }}
@@ -77,7 +98,7 @@ const Home = () => {
             “What i like about photographs is that they capture a moment that’s
             gone forever, impossible to reproduce.” ― Karl Lagerfeld
           </Typography>
-        </div>
+        </Container>
       </Container>
     </>
   );

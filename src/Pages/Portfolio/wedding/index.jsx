@@ -10,33 +10,7 @@ export default function PortfolioWedding() {
   const navigate = useNavigate();
   return (
     <>
-      <Box>
-        <Container maxWidth="xl" sx={{ bgcolor: "#FCFFFD" }}>
-          <Typography variant="h3" component={"h1"} align="center" p={2}>
-            Feel free to explore my wedding photos
-          </Typography>
-          <Typography
-            align="center"
-            sx={{
-              p: 2,
-              fontWeight: 300,
-              fontFamily: "Nunito Sans",
-              fontSize: "1.1rem",
-            }}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
-            dolore qui. Ab, vitae molestias mollitia perferendis adipisci dolor
-            eos accusamus iure explicabo! Dolorum magnam repellat molestias
-            cupiditate accusantium fugit. Iusto natus suscipit dolor quasi nisi
-            ratione hic tempore quaerat! Libero nisi cupiditate, ex minus
-            incidunt omnis consequatur porro nemo, a at, maxime rem repellendus
-            modi sunt voluptatum vero harum ut. In facilis impedit veniam sunt
-            officiis id dolor esse architecto a nam, voluptatem dolorem odio
-            magnam optio deleniti eos rem magni beatae soluta? Ducimus officia
-            quas provident quos voluptatum voluptates alias ut aspernatur
-            reprehenderit earum hic, odit enim, illum magnam!
-          </Typography>
-        </Container>
+      <Container maxWidth="xl">
         <Button
           startIcon={<ArrowBackIcon />}
           variant="contained"
@@ -47,20 +21,62 @@ export default function PortfolioWedding() {
         >
           Portfolio
         </Button>
-      </Box>
-      <Container maxWidth="lg" sx={{ mt: 4 }}>
-        <ImageList sx={{ height: 600 }} cols={2} gap={10}>
-          {itemData.map((item) => (
-            <ImageListItem key={item.img} className="imageItem">
-              <img
-                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
+        <Typography variant="h3" component={"h1"} align="center" p={2}>
+          Wedding Photography
+        </Typography>
+        <Typography
+          align="center"
+          sx={{
+            p: 2,
+            fontWeight: 200,
+            fontFamily: "Nunito Sans",
+            fontSize: "1.1rem",
+          }}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
+          dolore qui. Ab, vitae molestias mollitia perferendis adipisci dolor
+          eos accusamus iure explicabo! Dolorum magnam repellat molestias
+          cupiditate accusantium fugit. Iusto natus suscipit dolor quasi nisi
+          ratione hic tempore quaerat! Libero nisi cupiditate, ex minus incidunt
+          omnis consequatur porro nemo, a at, maxime rem repellendus modi sunt
+          voluptatum vero harum ut. In facilis impedit veniam sunt officiis id
+          dolor esse architecto a nam, voluptatem dolorem odio magnam optio
+          deleniti eos rem magni beatae soluta? Ducimus officia quas provident
+          quos voluptatum voluptates alias ut aspernatur reprehenderit earum
+          hic, odit enim, illum magnam!
+        </Typography>
+        <Container maxWidth={400}>
+          <ImageList sx={{ height: 600, p: 4 }} cols={2} gap={30}>
+            {itemData.map((item) => (
+              <Box
+                sx={{
+                  border: "5px solid black",
+                }}
+              >
+                <ImageListItem
+                  key={item.img}
+                  className="imageItem"
+                  sx={{
+                    border: "10px solid white",
+                  }}
+                >
+                  <img
+                    src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                    srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                    alt={item.title}
+                    loading="lazy"
+                  />
+                </ImageListItem>
+                <Typography
+                  align="center"
+                  sx={{ p: 1, fontSize: "18px", fontWeight: "200" }}
+                >
+                  {item.title}
+                </Typography>
+              </Box>
+            ))}
+          </ImageList>
+        </Container>
       </Container>
     </>
   );

@@ -9,6 +9,7 @@ import PortfolioStreets from "./Pages/Portfolio/streets";
 import PortfolioCreative from "./Pages/Portfolio/creative";
 import Contact from "./Pages/Contact";
 import LearnMe from "./Pages/LearnMe";
+import Footer from "./Pages/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/learn-me" element={<LearnMe />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </ThemeProvider>
   );
 }
